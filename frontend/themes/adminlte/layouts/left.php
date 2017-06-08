@@ -66,7 +66,7 @@ use common\widgets\Alert;
 							['label' => 'เมนู User',
 								'items' => [
 									['label' => 'นำเข้าไฟล์ Excel','url' => ['/import/excel/index']],
-									['label' => 'ค้นหาข้อมูลผู้แพ้ยา','url' => ['/drugdata/drugdata/index']],
+									['label' => 'ทะเบียนผู้แพ้ยา','url' => ['/drugdata/drugdata/index']],
 									['label' => 'รายงานจำนวนผู้ป่วยแพ้ยา','url' => ['/drugdata/report/report1']],
 									['label' => 'รายงานผู้ป่วยแพ้ยา','url' => ['/drugdata/report/report2']],
 								],
@@ -81,7 +81,7 @@ use common\widgets\Alert;
 						'items' => [
 							['label' => 'Menu User', 'options' => ['class' => 'header']],
 							['label' => 'นำเข้าไฟล์ Excel','url' => ['/import/excel/index']],
-							['label' => 'ค้นหาข้อมูลผู้แพ้ยา','url' => ['/drugdata/drugdata/index']],
+							['label' => 'ทะเบียนผู้แพ้ยา','url' => ['/drugdata/drugdata/index']],
 							['label' => 'รายงานจำนวนผู้ป่วยแพ้ยา','url' => ['/drugdata/report/report1']],
 							['label' => 'รายงานผู้ป่วยแพ้ยา','url' => ['/drugdata/report/report2']],
 							

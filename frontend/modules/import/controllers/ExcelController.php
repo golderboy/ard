@@ -52,9 +52,11 @@ class ExcelController extends Controller {
 				$rec = 0;
 				if(\Yii::$app->user->identity->id === 1 ){//for admin id = 1
 					foreach ($array as $value) {
+						$value['daterecord'] = date('Y-m-d', \PHPExcel_Shared_Date::ExcelToPHP($value['daterecord']));
+						$value['ptdob'] = date('Y-m-d', \PHPExcel_Shared_Date::ExcelToPHP($value['ptdob']));
+							$arrText = array("-","_");
+							$value['cardid'] = str_replace($arrText,"",$value['cardid']);
 						$drug = new Drugdata();
-						$drug->daterecord = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($value['daterecord']));
-						$drug->ptdob = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($value['ptdob']));
 						$drug->attributes = $value;
 						$drug->save(FALSE);
 						$rec++;
@@ -62,8 +64,10 @@ class ExcelController extends Controller {
 				}else{
 					foreach ($array as $value) {
 						if( ($value['pcucode']) == \Yii::$app->user->identity->hoscode ){
-							$drug->daterecord = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($value['daterecord']));
-							$drug->ptdob = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($value['ptdob']));
+							$value['daterecord'] = date('Y-m-d', \PHPExcel_Shared_Date::ExcelToPHP($value['daterecord']));
+							$value['ptdob'] = date('Y-m-d', \PHPExcel_Shared_Date::ExcelToPHP($value['ptdob']));
+								$arrText = array("-","_");
+								$value['cardid'] = str_replace($arrText,"",$value['cardid']);
 							$drug = new Drugdata();
 							$drug->attributes = $value;
 							$drug->save(FALSE);

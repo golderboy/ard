@@ -34,7 +34,7 @@ echo GridView::widget([
 				return  $model->pttitle." ".$model->ptfname." ".$model->ptlname 
 				;},
 			],
-            'ptsex',
+            'sexname',
             'ptdob',
             // 'ptaddress',
             // 'ptvillage',

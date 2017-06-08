@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'pttitle',
             //'ptfname',
             //'ptlname',
-            'ptsex',
+            'sexname',
             'ptdob',
 			
 			[

@@ -49,7 +49,7 @@ class Drugdata extends \yii\db\ActiveRecord
         return [
             //[['pcucode', 'daterecord', 'hn'], 'required'],
             [['daterecord', 'ptdob'], 'safe'],
-            [['pcucode', 'hn', 'cardid', 'pttitle', 'ptfname', 'ptlname', 'ptsex', 'ptaddress', 'ptvillage', 'pttambon', 'ptamphur', 'ptprovince', 'ptphone', 'listname', 'listsign', 'descrip', 'pharmacist'], 'string', 'max' => 255],
+            [['pcucode','sexname','hn', 'cardid', 'pttitle', 'ptfname', 'ptlname', 'ptsex', 'ptaddress', 'ptvillage', 'pttambon', 'ptamphur', 'ptprovince', 'ptphone', 'listname', 'listsign', 'descrip', 'pharmacist'], 'string', 'max' => 255],
         ];
     }
 
@@ -69,7 +69,8 @@ class Drugdata extends \yii\db\ActiveRecord
             'ptlname' => 'Ptlname',
 			//'fullname' => Yii::t('app', 'ชื่อ-นามสกุล'),
 			'fullname' => 'ชื่อ-นามสกุล',
-            'ptsex' => 'เพศ',
+            //'ptsex' => 'เพศ',
+			'sexname' => 'เพศ',
             'ptdob' => 'วันที่แพ้',
             'ptaddress' => 'ที่อยู่',
             'ptvillage' => 'หมู่บ้าน',
@@ -109,8 +110,18 @@ class Drugdata extends \yii\db\ActiveRecord
 	public function getHospital() {
         return $this->hasOne(Hospital::className(), ['hoscode' => 'pcucode']);
     }
+	
 	public function getHosname() {
         return $this->hospital->hosname;
+    }
+	
+	public function getSexname() {
+		if($this->ptsex == "SX1"){ 
+			$sexname = "ชาย";
+		}else if($this->ptsex == "SX2"){ 
+			$sexname = "หญิง"; 
+		}
+			return $sexname;
     }
 
 }

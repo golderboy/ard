@@ -12,9 +12,9 @@ use frontend\modules\drugdata\models\Drugdata;
  */
 class DrugviewSearch extends Drugdata
 {
-//public $cardid,$pcucode,$daterecord,$hn,$cardid,$pttitle,$ptfname,$ptlname;
-//public $ptsex,$ptdob,$ptaddress,$ptvillage,$pttambon,$ptamphur,$ptprovince;
-//public $ptphone,$listname,$listsign,$descrip,$pharmacist,$fullname,$hosname];
+public $cardid,$pcucode,$daterecord,$hn,$pttitle,$ptfname,$ptlname;
+public $ptsex,$ptdob,$ptaddress,$ptvillage,$pttambon,$ptamphur,$ptprovince;
+public $ptphone,$listname,$listsign,$descrip,$pharmacist,$fullname,$hosname,$sexname;
 
 	function __construct($cardid){ 
         $this->cardid = $cardid;
@@ -30,7 +30,7 @@ class DrugviewSearch extends Drugdata
             [['id'], 'integer'],
             [['pcucode', 'daterecord', 'hn', 'cardid', 'pttitle', 'ptfname', 'ptlname'
 				, 'ptsex', 'ptdob', 'ptaddress', 'ptvillage', 'pttambon', 'ptamphur', 'ptprovince'
-				, 'ptphone', 'listname', 'listsign', 'descrip', 'pharmacist','fullname','hosname'], 'safe'],
+				, 'ptphone','sexname', 'listname', 'listsign', 'descrip', 'pharmacist','fullname','hosname'], 'safe'],
         ];
     }
 
@@ -82,7 +82,7 @@ class DrugviewSearch extends Drugdata
             ->andFilterWhere(['like', 'pttitle', $this->pttitle])
 				->orFilterWhere(['like', 'ptfname', $this->ptfname])
 				->orFilterWhere(['like', 'ptlname', $this->ptfname])
-            ->andFilterWhere(['like', 'ptsex', $this->ptsex])
+            ->andFilterWhere(['like', 'sexname', $this->sexname])
             ->andFilterWhere(['like', 'ptaddress', $this->ptaddress])
             ->andFilterWhere(['like', 'ptvillage', $this->ptvillage])
             ->andFilterWhere(['like', 'pttambon', $this->pttambon])
