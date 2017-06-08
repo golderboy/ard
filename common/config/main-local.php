@@ -4,7 +4,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yiiweb;port=3306',
+            'dsn' => 'mysql:host=localhost;dbname=db_ard;port=3306',
             'username' => 'root',
             'password' => '123456',
             'charset' => 'utf8',
@@ -18,24 +18,20 @@ return [
                   ]
                   */
         ],
-        'db_hdc' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=192.168.1.6;dbname=dhdc;port=3306',
-            'username' => 'sa',
-            'password' => 'sa',
-            'charset' => 'utf8',
-        ],
+
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => FALSE,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'jobs.golderboy@gmail.com',
-                'password' => 'magcartoon',
-                'port' => '465',
-                'encryption' => 'ssl',
-            ],
+           /*
+			   'class' => 'yii\swiftmailer\Mailer',
+				'useFileTransport' => TRUE,
+				'transport' => [
+					'class' => 'Swift_SmtpTransport',
+					'host' => 'smtp.gmail.com',
+					'username' => 'admin@gmail.com',
+					'password' => '',
+					'port' => '465',
+					'encryption' => 'ssl',
+				],
+			*/
         ],
     ],
 ];

@@ -3,6 +3,7 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'language' => 'th',
+	'name'=>'ADR rayong v 1.0',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -10,6 +11,7 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+		
 
     ],
     'modules' => [
@@ -35,30 +37,13 @@ return [
             'cost' => 12,
             'admins' => ['admin']
         ],
-        'orm' => [
-            'class' => 'frontend\modules\orm\Orm',
+        'import' => [
+            'class' => 'frontend\modules\import\import',
         ],
-        'dao' => [
-            'class' => 'frontend\modules\dao\Dao',
+		'drugdata' => [
+            'class' => 'frontend\modules\drugdata\data',
         ],
-        'gis' => [
-            'class' => 'frontend\modules\gis\Gis',
-        ],
-        'testbeta' => [
-            'class' => 'frontend\modules\testbeta\testbeta',
-        ],
-         'upload' => [
-            'class' => 'frontend\modules\upload\Upload',
-        ],
-        'visit' => [
-            'class' => 'frontend\modules\visit\Visit',
-        ],
-        'plktest' => [
-            'class' => 'frontend\modules\plktest\Plktest',
-        ],
-        'pcc' => [
-            'class' => 'frontend\modules\pcc\Pcc',
-        ],
+        
 
     ]
 ];

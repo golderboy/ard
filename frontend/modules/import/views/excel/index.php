@@ -22,6 +22,18 @@ $dataProvider = new yii\data\ActiveDataProvider([
     'query'=>$model
 ]);
 echo GridView::widget([
-    'dataProvider'=>$dataProvider
+    'dataProvider'=>$dataProvider,
+	'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+		'file_name',
+		'records',
+		[
+		'attribute' => 'created_by',
+		'label' => 'ผู้นำเข้า',
+		'value' => function($model){return  $model->users->username ;},
+		],
+		'created_at'
+	]
+	
 ]);
 ?>

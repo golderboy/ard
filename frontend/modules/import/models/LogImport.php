@@ -45,11 +45,11 @@ class LogImport extends \yii\db\ActiveRecord {
     public function attributeLabels() {
         return [
             'id' => 'ID',
-            'file_name' => 'File Name',
-            'records' => 'Records',
-            'created_by' => 'Created By',
+            'file_name' => 'ชื่อไฟล์',
+            'records' => 'จำนวนที่นำเข้า',
+            'created_by' => 'ผู้นำเข้า',
             'updated_by' => 'Updated By',
-            'created_at' => 'Created At',
+            'created_at' => 'วันที่นำเข้า',
             'updated_at' => 'Updated At',
         ];
     }
@@ -63,5 +63,10 @@ class LogImport extends \yii\db\ActiveRecord {
             ]
         ];
     }
+	
+	public function getUsers() {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
+	
 
 }

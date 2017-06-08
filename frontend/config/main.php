@@ -12,6 +12,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+	'name'=>'ADR rayong v 1.0',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -37,7 +38,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
           'view' => [
             'theme' => [
               'pathMap' => [
@@ -45,9 +46,9 @@ return [
               ],
             ],
           ],
-         */
+         
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => false,
             'showScriptName' => false,
             'rules' => [
             ],

@@ -9,7 +9,7 @@ class AccessOwnData extends Rule
 
     public function execute($user_id, $item, $params)
     {
-        //return FALSE;
+        //return Admin Full control;
         if($user_id === 1){
             return TRUE;
         }
